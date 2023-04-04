@@ -6,7 +6,8 @@
  * Return: if c is found - points to the first occurence
  * if c is not found - null
  */
-char *_strchr(char *s, char c)
+char *_strchr(char *s)
+	char c  /** the character to be located */
 {
 	int index;
 
@@ -15,5 +16,5 @@ char *_strchr(char *s, char c)
 		if (s[index] == c)
 			return (s + index);
 	}
-	return ('\0');
+	return (NULL);
 }
