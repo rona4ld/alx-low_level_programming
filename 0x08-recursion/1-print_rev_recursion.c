@@ -1,16 +1,13 @@
 #include "main.h"
-
 /**
- * put_rev - prints a string in reverse
- * @s: pointer to the string to be printed
- *
- * Return: void
+ * _print_rev_recursion - prints a strong in reverse.
+ * @s: the string to be printed.
  */
 void _print_rev_recursion(char *s)
 {
 	if (*s)
 	{
-	_print_rev_recursion - (s + 1);
-	_putchar(*s);
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
 	}
 }
