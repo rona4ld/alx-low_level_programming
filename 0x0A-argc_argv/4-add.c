@@ -1,59 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
 
 /**
- * check_num - checks if a string contains only digits
- * @str: string to check
- * Return: 1 if the string contains only digits, 0 otherwise
+ * main - adds positive numbers.
+ * @argc: argument count
+ * @argv: arguments
+ * Return: 0
  */
-int check_num(char *str)
+int main(int argc, char **argv)
 {
-	unsigned int count;
+	int i, n, sum = 0;
+	char *flag;
 
-	count = 0;
-	while (count < strlen(str))
+	if (argc < 2)
 	{
-		if (!isdigit(str[count]))
-		{
-			return (0);
-		}
-
-		count++;
+		printf("0\n");
+		return (0);
 	}
-	return (1);
-}
 
-/**
- * main - adds up the command line arguments that are numbers
- * @argc: number of arguments
- * @argv: array of arguments
- * Return: 0 if successful, 1 if an error occurred
- */
-int main(int argc, char *argv[])
-{
-	int count;
-	int str_to_int;
-	int sum = 0;
-
-	count = 1;
-	while (count < argc)
+	for (i = 1; argv[i]; i++)
 	{
-		if (check_num(argv[count]))
+		n = strtol(argv[i], &flag, 10);
+		if (*flag)
 		{
-			str_to_int = atoi(argv[count]); /* atoi converts a string to an integer */
-			sum += str_to_int;
+			printf("Error\n");
+			return (1);
 		}
 		else
 		{
-			printf("Error: Argument %d is not a number\n", count);
-			return (1);
+			sum += n;
 		}
-
-		count++;
 	}
-
 	printf("%d\n", sum);
+
 	return (0);
 }
