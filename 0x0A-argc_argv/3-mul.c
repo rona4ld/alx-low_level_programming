@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include "main.h"
+
 /**
  * _atoi - converts a string to an integer
- * @s: stringto be converted
+ * @s: string to be converted
  * Return: the int converted from the string
  */
 int _atoi(char *s)
@@ -18,6 +19,7 @@ int _atoi(char *s)
 
 	while (s[len] != '\0')
 		len++;
+
 	while (i < len && f == 0)
 	{
 		if (s[i] == '-')
@@ -35,31 +37,34 @@ int _atoi(char *s)
 		}
 		i++;
 	}
+
 	if (f == 0)
 		return (0);
+
 	return (n);
 }
+
 /**
  * main - multiply two numbers
  * @argc: number of arguments
  * @argv: array of arguments
- * Return : 0 on success, 1 on error
+ * Return: 0 on success, 1 on error
  */
 int main(int argc, char *argv[])
 {
 	int result, num1, num2;
 
-	if (argc < 3 || argc > 2)
+	if (argc != 3)
 	{
-		printf("error\n");
-		return (1);
+		printf("Error: The program requires two arguments\n");
+		return (1); /* indicates an error occurred*/
 	}
 
 	num1 = _atoi(argv[1]);
 	num2 = _atoi(argv[2]);
 	result = num1 * num2;
-}
+
 	printf("%d\n", result);
 
-	return (0);
+	return (0); /* indicates successful program execution*/
 }
