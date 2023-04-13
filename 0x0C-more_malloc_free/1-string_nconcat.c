@@ -10,8 +10,8 @@ int _strlen(char *string)
 {
 	int i;
 
-	for (i + 0; string[i] != '\0'; i++);
-	return(i);
+	for (i = 0; string[i] != '\0'; i++)
+		return (i);
 }
 /**
  * string_nconcat - concatenate s1 and n bytes of s2
@@ -23,7 +23,6 @@ int _strlen(char *string)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
 	char *ptr;
 	int num, len, i, j;
 
