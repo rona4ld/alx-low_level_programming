@@ -22,3 +22,10 @@ int main(void)
     printf("%u\n", n);
     return (0);
 }
+julien@ubuntu:~/0x14. Binary$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c 0-binary_to_uint.c -o a
+julien@ubuntu:~/0x14. Binary$ ./a 
+1
+5
+0
+98
+402
